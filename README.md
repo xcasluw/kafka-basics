@@ -12,5 +12,6 @@ A kafka producer/consumer proof of concept using node.
 ## Running locally
 
 * `npm install` - installs npm dependencies.
-* `npm run producer` - starts producer.
-* `npm run consumer` - starts consumer.
+* `docker-compose up` - creates kafka and zookeeper containers.
+* `npm start` - starts the server and the consumer method
+* `http://localhost:3002/producer` - endpoint to produce

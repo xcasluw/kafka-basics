@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
     "consumer": "node src/consumer/index.js",
     "producer": "node src/producer/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +14,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.3",
     "kafkajs": "^1.16.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
