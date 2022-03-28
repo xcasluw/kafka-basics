@@ -1,14 +1,13 @@
 const { Kafka } = require("kafkajs")
 
+const kafka = new Kafka({
+  clientId: "my-app",
+  brokers: ["localhost:9092"],
+})
+
 class KafkaController {
   async consumer () {
-    const kafka = new Kafka({
-      clientId: "my-app",
-      brokers: ["localhost:9092"],
-    })
-  
     const consumer = kafka.consumer({ groupId: "test-group" })
-  
     await consumer.connect()
     await consumer.subscribe({ topic: "test-topic", fromBeginning: true })
   
@@ -24,11 +23,6 @@ class KafkaController {
 
   async producer (request, response) {
     const data = request.body
-  
-    const kafka = new Kafka({
-      clientId: "my-app",
-      brokers: ["localhost:9092"],
-    })
   
     const producer = kafka.producer({
       allowAutoTopicCreation: false,
